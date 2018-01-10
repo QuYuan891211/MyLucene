@@ -22,5 +22,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.11" level="application_server_libraries" />
     <orderEntry type="library" name="junit4_lib" level="project" />
     <orderEntry type="library" name="Lucene_3" level="project" />
+    <orderEntry type="library" name="JavaBean" level="project" />
   </component>
 </module>
