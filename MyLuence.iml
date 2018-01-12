@@ -23,5 +23,6 @@
     <orderEntry type="library" name="junit4_lib" level="project" />
     <orderEntry type="library" name="Lucene_3" level="project" />
     <orderEntry type="library" name="JavaBean" level="project" />
+    <orderEntry type="library" name="other" level="project" />
   </component>
 </module>
