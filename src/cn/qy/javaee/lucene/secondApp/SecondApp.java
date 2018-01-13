@@ -17,7 +17,7 @@ import java.util.List;
 public class SecondApp {
     @Test
     public void createIndexDB() throws Exception{
-        Article article = new Article(2,"腾讯","腾讯的主席是马化腾");
+        Article article = new Article(7,"腾讯","腾讯腾讯成立于1998年11月,是目前中国领先的互联网增值服务提供商之一。。");
         org.apache.lucene.document.Document document = LuceneUtil.javaBean2Document(article);
         IndexWriter writer = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
         writer.addDocument(document);
