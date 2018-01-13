@@ -1,11 +1,16 @@
 package cn.qy.javaee.lucene.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PageBean {
     private Integer allObjNum;
     private Integer allPageNum;
     private Integer pageNum;
-    private Integer pageSize;
+    private Integer pageSize = 2;
 
+
+    private List<Article> articleList = new ArrayList<Article>();
     public PageBean(){};
 
     public PageBean(Integer allObjNum, Integer allPageNum, Integer pageNum, Integer pageSize, Integer currPageNo) {
@@ -22,6 +27,11 @@ public class PageBean {
 
     public void setAllObjNum(Integer allObjNum) {
         this.allObjNum = allObjNum;
+        if(this.allObjNum % this.pageSize == 0){
+            this.allPageNum = this.allObjNum / this.pageSize;
+        }else{
+            this.allPageNum = this.allObjNum / this.pageSize + 1;
+        }
     }
 
     public Integer getAllPageNum() {
@@ -57,5 +67,11 @@ public class PageBean {
     }
 
     private Integer currPageNo;
+    public List<Article> getArticleList() {
+        return articleList;
+    }
 
+    public void setArticleList(List<Article> articleList) {
+        this.articleList = articleList;
+    }
 }

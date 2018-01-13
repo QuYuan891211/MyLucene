@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleDao {
-    private PageBean pageBean = new PageBean();
+
 
     public Integer getObjNum(String word) throws Exception {
         String keywords = word;
@@ -23,10 +23,9 @@ public class ArticleDao {
         QueryParser queryParser = new QueryParser(LuceneUtil.getVersion(),"content",LuceneUtil.getAnalyzer());
         Query query = queryParser.parse(keywords);
         TopDocs topDocs = searcher.search(query,100000);
-        pageBean.setAllObjNum(topDocs.totalHits);
         System.out.println("总数为："+topDocs.totalHits);
         searcher.close();
-        return pageBean.getAllObjNum();
+        return topDocs.totalHits;
     }
     public List<Article> getAllRecordWithPagination(String words, Integer start, Integer size) throws Exception{
         List<Article> articleList = new ArrayList<Article>();
