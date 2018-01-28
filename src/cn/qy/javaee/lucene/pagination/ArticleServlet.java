@@ -16,7 +16,7 @@ public class ArticleServlet extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
             Integer currPageNum = Integer.parseInt(request.getParameter("currPageNum"));
             String keyWords = request.getParameter("keyWords");
-            ArticleSerive articleSerive = new ArticleSerive();
+            ArticleService articleSerive = new ArticleService();
             PageBean pageBean = articleSerive.fy(keyWords,currPageNum);
             request.setAttribute("pageBean",pageBean);
             request.getRequestDispatcher("/list.jsp").forward(request,response);

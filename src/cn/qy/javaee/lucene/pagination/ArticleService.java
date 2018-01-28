@@ -5,7 +5,7 @@ import cn.qy.javaee.lucene.entity.PageBean;
 
 import java.util.List;
 
-public class ArticleSerive {
+public class ArticleService {
     private ArticleDao articleDao = new ArticleDao();
     public PageBean fy (String keyWords, int currentNo) throws Exception{
         PageBean pageBean = new PageBean();
